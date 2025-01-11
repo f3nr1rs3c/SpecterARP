@@ -4,7 +4,14 @@ import time
 from pyfiglet import Figlet
 from colorama import init, Fore
 
+# Colorama'yi başlatma
 init()
+
+def print_banner():
+    """SpecterArp için banner yazdırır"""
+    f = Figlet(font='slant', width=100)
+    print(Fore.RED + f.renderText('SpecterArp'))
+    print(Fore.MAGENTA + "                      | - |  By : F3NR1R - Cyber Security | - |         \n" + Fore.RESET)
 
 def random_mac():
     """Rastgele bir MAC adresi üretir"""
@@ -29,8 +36,14 @@ def mac_spoofing(target_ip, iface, packet_count, interval=1):
         time.sleep(interval)
 
 # Kullanıcıdan hedef IP adresi, ağ arayüzü ve gönderilecek paket sayısını alma
-target_ip = input("Yerel ağdaki hedef IP adresini girin: ")
-iface = input(Fore.CYAN + "Ağ arayüzünü girin (örneğin eth0): " + Fore.RESET)
-packet_count = int(input("Göndermek istediğiniz paket sayısını girin: "))
+def main():
+    print_banner()  # Bannerı yazdır
 
-mac_spoofing(target_ip, iface, packet_count)
+    target_ip = input("Yerel ağdaki hedef IP adresini girin: ")
+    iface = input(Fore.CYAN + "Ağ arayüzünü girin (örneğin eth0): " + Fore.RESET)
+    packet_count = int(input("Göndermek istediğiniz paket sayısını girin: "))
+
+    mac_spoofing(target_ip, iface, packet_count)
+
+if __name__ == "__main__":
+    main()
