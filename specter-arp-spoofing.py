@@ -11,7 +11,7 @@ def print_banner():
     """SpecterArp için banner yazdırır"""
     f = Figlet(font='slant', width=100)
     print(Fore.RED + f.renderText('SpecterArp'))
-    print(Fore.MAGENTA + "                      | - |  By : F3NR1R - Cyber Security | - |         \n" + Fore.RESET)
+    print(Fore.MAGENTA + "                      | - |  By : Fenrir - Penetration Tester | - |         \n" + Fore.RESET)
 
 def random_mac():
     """Rastgele bir MAC adresi üretir"""
